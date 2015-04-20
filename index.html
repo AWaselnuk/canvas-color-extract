@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel Artist</title>
+  <script src="application.js"></script>
+  <style>
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Is drawn in #colors*/
+    .color {
+      float: left;
+      height: 25px;
+      width: 25px;
+      border: 1px solid #eee;
+    }
+
+    #divart {
+      position: relative;
+      width: 640px; /* TODO: Don't hardcode width and height */
+      height: 640px;
+    }
+
+    /* Is drawn in #divart */
+    .pixel {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+    }
+
+    /* Animation */
+    @-webkit-keyframes pixel {
+      0%   { transform: translate(400px, 0); }
+      100% { transform: translate(0, 0);    }
+    }
+
+    .animation-pixel:nth-child(7n) {
+      -webkit-animation: pixel 1.4s alternate infinite; /* IE 10+, Fx 29+ */
+    }
+  </style>
+</head>
+<body>
+  <h1>Pixel Artist Demo</h1>
+
+  <p>We will extract the color data at every pixel of an image using canvas.</p>
+
+  <h2>Image</h2>
+  <img id="demo" src="puke-hippo-smaller.jpg" alt="Puking Hippo">
+
+  <h2>Colors</h2>
+
+  <div id="colors" class="clearfix"></div>
+
+  <h2>Div Pixel Art</h2>
+
+  <div id="divart"></div>
+
+</body>
+</html
