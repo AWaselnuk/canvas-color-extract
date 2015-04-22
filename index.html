@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pixel Artist</title>
+  <title>Canvas Color Extraction</title>
   <script src="application.js"></script>
   <style>
     .clearfix:after {
@@ -28,18 +28,19 @@
     /* Is drawn in #divart */
     .pixel {
       position: absolute;
-      width: 1px;
-      height: 1px;
     }
 
     /* Animation */
     @-webkit-keyframes pixel {
-      0%   { transform: translate(400px, 0); }
-      100% { transform: translate(0, 0);    }
+      /* 0%   { transform: translate(400px, 0); }
+      100% { transform: translate(0, 0);    } */
+
+      0%   { transform: scale(0.7); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     .animation-pixel:nth-child(7n) {
-      -webkit-animation: pixel 1.4s alternate infinite; /* IE 10+, Fx 29+ */
+      -webkit-animation: pixel 1.2s alternate infinite; /* IE 10+, Fx 29+ */
     }
   </style>
 </head>
@@ -52,12 +53,9 @@
   <img id="demo" src="puke-hippo-smaller.jpg" alt="Puking Hippo">
 
   <h2>Colors</h2>
-
   <div id="colors" class="clearfix"></div>
 
   <h2>Div Pixel Art</h2>
-
   <div id="divart"></div>
-
 </body>
 </html

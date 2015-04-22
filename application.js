@@ -43,11 +43,15 @@ function printColors(colors) {
   document.getElementById('colors').innerHTML = divs;
 }
 
-function printPicture(pixels) {
+function printPicture(pixels, size) {
   var divs = "";
   pixels.forEach(function(pixel) {
     var rgba = "rgba(" + pixel.color[0] + "," + pixel.color[1] + "," + pixel.color[2] + "," + pixel.color[3] + ")";
-    var div = "<div class='pixel animation-pixel' style='background-color: " + rgba + "; top: " + pixel.y + "px; left: " + pixel.x + "px;'></div>";
+    var top = pixel.y * size;
+    var left = pixel.x * size;
+    var div = "<div class='pixel animation-pixel' " +
+      "style='background-color: " + rgba + "; top: " + top + "px; left: " + left + "px; " +
+      "width: " + size + "px; height: " + size + "px;'></div>";
     divs += div;
   });
   document.getElementById('divart').innerHTML = divs;
@@ -90,7 +94,7 @@ function main(src) {
     console.log(uniqueColors);
 
     printColors(uniqueColors);
-    printPicture(pixels);
+    printPicture(pixels, 10);
   };
   imageObj.src = src;
 }
