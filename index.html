@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Canvas Color Extraction</title>
   <script src="application.js"></script>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <style>
     .clearfix:after {
       content: "";
@@ -45,17 +46,27 @@
   </style>
 </head>
 <body>
-  <h1>Pixel Artist Demo</h1>
 
-  <p>We will extract the color data at every pixel of an image using canvas.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Pixel Artist Demo</h1>
+        <p class="lead">We will extract the color data at every pixel of an image using canvas.</p>
 
-  <h2>Image</h2>
-  <img id="demo" src="puke-hippo-smaller.jpg" alt="Puking Hippo">
+        <h2>Original Image</h2>
+        <p class="lead">This is simply an image tag with a <code>src</code></p>
+        <img id="demo" src="puke-hippo-smaller.jpg" alt="Puking Hippo">
 
-  <h2>Colors</h2>
-  <div id="colors" class="clearfix"></div>
+        <h2>Colors</h2>
+        <p class="lead">This is every color found in the image by <code>canvas</code></p>
+        <div id="colors" class="clearfix"></div>
 
-  <h2>Div Pixel Art</h2>
-  <div id="divart"></div>
+        <h2>Div Pixel Art</h2>
+        <p class="lead">Since I have color and position data for every pixel, I can do silly things like draw the image with animated divs.</p>
+        <div id="divart"></div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html
